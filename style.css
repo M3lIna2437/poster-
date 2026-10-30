@@ -1,0 +1,91 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111;
+    font-family: Arial, sans-serif;
+}
+
+#escena {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    background-image: url("images/fondo.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.objeto {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.objeto:hover {
+    transform: scale(1.15);
+}
+
+.objeto.encontrado {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* Posiciones de los cinco objetos */
+.objeto:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.objeto:nth-child(2) {
+    top: 55%;
+    left: 30%;
+}
+
+.objeto:nth-child(3) {
+    top: 25%;
+    left: 55%;
+}
+
+.objeto:nth-child(4) {
+    top: 65%;
+    left: 70%;
+}
+
+.objeto:nth-child(5) {
+    top: 40%;
+    left: 85%;
+}
+
+#progreso {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    background: #000a;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+#secreto {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: #000d;
+    align-items: center;
+    justify-content: center;
+}
+
+#secreto img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
